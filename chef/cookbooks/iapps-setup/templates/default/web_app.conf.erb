@@ -5,7 +5,7 @@
 <VirtualHost *:80>
    ServerName <%= @params[:server_name] %>
    <% if @params[:server_aliases] -%>
-   ServerAlias <%= @params[:server_aliases].map! { |k| "#{k}.#{node['app']['name']}.vm" }.join(" ") %>
+   ServerAlias <%= @params[:server_aliases].map! { |k| "#{k}.#{node['app']['name']}" }.join(" ") %>
    <% end -%>
    DocumentRoot <%= @params[:docroot] %>
 
@@ -33,7 +33,7 @@
 <VirtualHost _default_:443>
    ServerName <%= @params[:server_name] %>
    <% if @params[:server_aliases] -%>
-   ServerAlias <%= @params[:server_aliases].map! { |k| "#{k}.#{node['app']['name']}.vm" }.join(" ") %>
+   ServerAlias <%= @params[:server_aliases].map! { |k| "#{k}.#{node['app']['name']}" }.join(" ") %>
    <% end -%>
    DocumentRoot <%= @params[:docroot] %>
 

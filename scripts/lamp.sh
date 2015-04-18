@@ -14,3 +14,5 @@ yum -y install memcached libmemcached10 libmemcached10-devel
 
 yum -y install httpd httpd-tools
 yum -y install php54 php54-gd php54-xml php54-cli php54-mcrypt php54-pear php54-soap php54-pecl-memcached php54-pdo php54-mysqlnd php54-mbstring php54-bcmath php54-pecl-zendopcache php54-common php54-devel php54-pecl-xdebug
+
+chkconfig --level 2345 memcached on

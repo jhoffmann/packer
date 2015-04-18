@@ -13,8 +13,6 @@ Vagrant.configure('2') do |config|
   config.ssh.insert_key = 'true'
   config.ssh.forward_agent = true
 
-  config.vm.hostname = 'dev.vm'
-
   config.vm.provider :virtualbox do |vb|
     vb.customize [
       'modifyvm', :id,

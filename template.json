@@ -9,6 +9,7 @@
     "ssh_username": "vagrant",
     "update": "true",
     "version": "0.1",
+    "tld": "dev.vm",
 
     "aws_access_key": "",
     "aws_secret_key": ""
@@ -97,14 +98,10 @@
       "cookbook_paths": ["chef/cookbooks"],
       "data_bags_path":  "chef/data_bags",
       "roles_path":      "chef/roles",
+      "json":{"app":{"name":"{{user `tld`}}"}},
       "run_list":  [
         "role[webserver]"
-      ],
-      "override": {
-        "virtualbox-iso": {
-          "execute_command": "echo 'vagrant'|sudo -S chef-solo --no-color -c {{.ConfigPath}} -j {{.JsonPath}}"
-        }
-      }
+      ]
     },
     {
       "type": "shell",

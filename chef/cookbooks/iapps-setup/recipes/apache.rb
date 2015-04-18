@@ -13,15 +13,18 @@ end
 apps.each do |name|
   app = data_bag_item("apps", name)
 
+  puts "Configuring #{app['id']}..."
   # Only setup the vhost if the directory exists
   if File.directory?("#{node['apache']['docroot_dir']}/#{app['id']}/")
     # Add app to apache config
     web_app app['id'] do
-      server_name "#{app['id']}.#{node['app']['name']}.vm"
+      server_name "#{app['id']}.#{node['app']['name']}"
       allow_override 'all'
       docroot "#{node['apache']['docroot_dir']}/#{app['id']}/#{app['docroot']}"
       server_aliases app['server_aliases']
       notifies :restart, resources("service[apache2]"), :delayed
     end
+  else
+    puts "Skipping vhost config for #{app['id']} as #{node['apache']['docroot_dir']}/#{app['id']} does not exist."
   end
 end
