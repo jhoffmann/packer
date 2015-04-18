@@ -25,5 +25,8 @@ apps.each do |name|
 end
 
 apache_module 'php' do
+  filename "libphp5.so"
+  module_path "#{node['apache']['dir']}/modules/#{params[:filename]}"
+  identifier "php5_module"
   conf true
 end
