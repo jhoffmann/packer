@@ -13,6 +13,13 @@ end
 apps.each do |name|
   app = data_bag_item("apps", name)
 
+  directory "#{node['apache']['docroot_dir']}/#{app['id']}/#{app['docroot']}" do
+    mode '0755'
+    recursive true
+    owner node['apache']['user']
+    group node['apache']['group']
+  end
+
   puts "Configuring #{app['id']}.#{node['app']['name']}..."
   # Add app to apache config
   web_app app['id'] do

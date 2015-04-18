@@ -79,7 +79,6 @@
       "scripts": [
         "scripts/lamp.sh",
         "scripts/common.sh",
-        "scripts/ruby.sh",
         "scripts/cleanup.sh"
       ]
     },
