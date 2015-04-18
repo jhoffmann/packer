@@ -1,0 +1,10 @@
+{
+  "id": "gatekeeper",
+  "docroot": "public/",
+  "server_aliases": [
+    "store",
+    "partners",
+    "web",
+    "www"
+  ]
+}

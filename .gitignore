@@ -1,4 +1,8 @@
-packer_cache
 .vagrant
-boxes/*
+packer_cache/
+boxes/
+iso/
 *.log
+*.lock
+chef/cookbooks/*
+!chef/cookbooks/iapps-*

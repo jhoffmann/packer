@@ -1,0 +1,35 @@
+{
+  "name": "iapps-setup",
+  "description": "Environment setup for Internal Applications",
+  "long_description": "",
+  "maintainer": "John Hoffmann",
+  "maintainer_email": "jhoffmann@sugarcrm.com",
+  "license": "Copyright (C) SugarCRM Inc. All rights reserved.",
+  "platforms": {
+    "centos": ">= 0.0.0",
+    "redhat": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apache2": ">= 0.0.0",
+    "php": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0",
+  "source_url": "",
+  "issues_url": ""
+}

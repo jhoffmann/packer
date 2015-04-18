@@ -1,0 +1,6 @@
+{
+  "id": "internal",
+  "docroot": "public/",
+  "server_aliases": [
+  ]
+}
