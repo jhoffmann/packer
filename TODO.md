@@ -1,6 +1,8 @@
-- get chef-solo installed in ruby.sh
-    - get apache vhosts setup
-- get .. mounted as /var/www/htdocs
+##### IN PROGRESS
+- check apache/php conf, does apache start
+    - use the apache2 helpers
+
+##### TODO
 - npm/node for some gatekeeper stuff
-- start a small memcache service for user sessions
-    - configure the php.ini
+- configure memcached (small memory footprint, just php sessions)
+- check the php.ini
