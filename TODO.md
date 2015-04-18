@@ -1,0 +1,6 @@
+- get chef-solo installed in ruby.sh
+    - get apache vhosts setup
+- get .. mounted as /var/www/htdocs
+- npm/node for some gatekeeper stuff
+- start a small memcache service for user sessions
+    - configure the php.ini
