@@ -1,10 +1,13 @@
-.vagrant
 packer_cache/
 boxes/
 iso/
 output-virtualbox-iso/
+
 *.log
 *.lock
+
 chef/cookbooks/*
 !chef/cookbooks/iapps-*
+
+.vagrant
 Vagrantfile
