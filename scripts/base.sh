@@ -21,4 +21,4 @@ fi
 
 echo "Rebooting the machine..."
 reboot
-sleep 60
+sleep 999999

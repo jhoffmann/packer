@@ -87,5 +87,6 @@ $ vagrant up
 #### Packaging
 Assuming you have your `~/.aws` setup by running `aws configure`, which comes from the Homebrew `awscli` package.
 ```
+$ aws s3 sync --dryrun boxes s3://iapps-dev-boxes
 $ aws s3 sync boxes s3://iapps-dev-boxes
 ```

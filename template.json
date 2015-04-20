@@ -5,12 +5,9 @@
     "iso_name": "CentOS-6.5-x86_64-minimal.iso",
     "iso_path": "iso",
     "iso_url": "http://archive.kernel.org/centos-vault/6.5/isos/x86_64/CentOS-6.5-x86_64-minimal.iso",
-    "ssh_password": "vagrant",
-    "ssh_username": "vagrant",
     "update": "true",
     "version": "0.2",
     "tld": "dev.vm",
-
     "aws_access_key": "",
     "aws_secret_key": ""
   },
@@ -30,27 +27,36 @@
         "{{ user `iso_path` }}/{{ user `iso_name` }}",
         "{{ user `iso_url` }}"
       ],
-      "ssh_username": "{{ user `ssh_username` }}",
-      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
       "ssh_port": 22,
-      "ssh_wait_timeout": "10000s",
+      "ssh_wait_timeout": "20m",
       "headless": "{{ user `headless` }}",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "virtualbox_version_file": ".vbox_version",
       "vboxmanage": [
-        ["modifyvm", "{{.Name}}", "--memory", "2048"],
-        ["modifyvm", "{{.Name}}", "--cpus", "1"]
+        ["modifyvm", "{{.Name}}", "--memory", "1024"],
+        ["modifyvm", "{{.Name}}", "--cpus", "1"],
+        ["modifyvm", "{{.Name}}", "--audio", "none"],
+        ["modifyvm", "{{.Name}}", "--usb", "off"],
+        ["modifyvm", "{{.Name}}", "--usbehci", "off"]
       ]
     },
     {
       "type": "amazon-ebs",
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
-      "region": "us-west-1",
       "source_ami": "ami-57cfc412",
+      "region": "us-west-1",
+      "ami_block_device_mappings": [
+        {
+          "device_name": "/dev/sda1",
+          "delete_on_termination": true
+        }
+      ],
       "instance_type": "t2.micro",
       "ssh_username": "root",
-      "ami_name": "CentOS-6.5__iAPPS_{{user `version`}}",
+      "ami_name": "CentOS-6.5__iAPPS_{{user `version`}}_{{timestamp}}",
       "ami_description": "iApps Standard Development Environment"
     }
   ],
@@ -107,7 +113,7 @@
   "post-processors": [
     {
       "type":  "vagrant",
-      "output" : "boxes/{{.Provider}}/iapps_{{user `version`}}.box",
+      "output": "boxes/{{.Provider}}/iapps_{{user `version`}}.box",
       "vagrantfile_template": "vagrant_templates/iapps.rb",
       "keep_input_artifact": true
     }
