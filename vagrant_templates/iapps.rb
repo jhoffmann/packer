@@ -9,11 +9,6 @@ Vagrant.configure('2') do |config|
 
   config.vm.provider :virtualbox do |vb, override|
     vb.name = 'iapps-dev'
-    vb.vm.synced_folder ".", "/vagrant", disabled: true
-    vb.vm.synced_folder '..', '/var/www/htdocs',
-      owner: 'vagrant',
-      group: 'vagrant',
-      mount_options: ['dmode=775,fmode=664']
 
     vb.customize ["modifyvm", :id, "--memory", "#{1024*1}"]
     vb.customize ["modifyvm", :id, "--cpus",  "1"]
