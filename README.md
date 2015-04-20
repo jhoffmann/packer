@@ -42,7 +42,7 @@ You want to run this from a directory near your other iApps repos.  So for examp
 $ cd ~/src
 $ mkdir packer; cd packer
 $ wget https://gist.githubusercontent.com/jhoffmann/8420473db2148c0c7ba7/raw/Vagrantfile
-$ vagrant box add iapps http://vagrant-boxes-sugar1.s3.amazonaws.com/virtualbox/iapps_0.1.box
+$ vagrant box add iapps http://iapps-dev-boxes.s3.amazonaws.com/virtualbox/iapps_0.1.box
 $ vagrant plugin install landrush
 $ vagrant up
 ```
@@ -87,5 +87,5 @@ $ vagrant up
 #### Packaging
 Assuming you have your `~/.aws` setup by running `aws configure`, which comes from the Homebrew `awscli` package.
 ```
-$ aws s3 sync boxes s3://vagrant-boxes-sugar1
+$ aws s3 sync boxes s3://iapps-dev-boxes
 ```
