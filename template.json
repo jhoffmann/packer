@@ -50,7 +50,7 @@
       "source_ami": "ami-57cfc412",
       "instance_type": "t2.micro",
       "ssh_username": "root",
-      "ami_name": "CentOS-6.5__iAPPS",
+      "ami_name": "CentOS-6.5__iAPPS_{{user `version`}}",
       "ami_description": "iApps Standard Development Environment"
     }
   ],
