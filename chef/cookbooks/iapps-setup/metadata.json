@@ -11,7 +11,9 @@
   "dependencies": {
     "apache2": ">= 0.0.0",
     "php": ">= 0.0.0",
-    "hostsfile": "~> 2.4.5"
+    "hostsfile": "~> 2.4.5",
+    "mysql2_chef_gem": "~> 1.0",
+    "nodejs": "~> 2.4.0"
   },
   "recommendations": {
   },

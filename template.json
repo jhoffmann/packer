@@ -49,8 +49,9 @@
       "region": "us-west-1",
       "source_ami": "ami-57cfc412",
       "instance_type": "t2.micro",
-      "ssh_username": "vagrant",
-      "ami_name": "CentOS-6.5__iAPPS"
+      "ssh_username": "root",
+      "ami_name": "CentOS-6.5__iAPPS",
+      "ami_description": "iApps Standard Development Environment"
     }
   ],
   "provisioners": [
@@ -87,6 +88,8 @@
       "cookbook_paths": ["chef/cookbooks"],
       "data_bags_path":  "chef/data_bags",
       "roles_path":      "chef/roles",
+      "prevent_sudo": false,
+      "skip_install": false,
       "json":{"app":{"name":"{{user `tld`}}"}},
       "run_list":  [
         "role[webserver]"

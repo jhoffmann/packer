@@ -1,3 +1,3 @@
 ##### TODO
-- npm/node for some gatekeeper stuff
 - aws configs/testing
+- cron.php inside the vm

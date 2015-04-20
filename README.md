@@ -19,6 +19,7 @@ Additional tools for testing/development:
 - composer
 - phpunit
 - phing
+- npm, grunt, bower
 
 #### Host requirements
 
@@ -42,7 +43,6 @@ You want to run this from a directory near your other iApps repos.  So for examp
 $ cd ~/src
 $ mkdir packer; cd packer
 $ wget https://gist.githubusercontent.com/jhoffmann/8420473db2148c0c7ba7/raw/Vagrantfile
-$ vagrant box add iapps http://iapps-dev-boxes.s3.amazonaws.com/virtualbox/iapps_0.1.box
 $ vagrant plugin install landrush
 $ vagrant up
 ```

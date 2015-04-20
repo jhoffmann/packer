@@ -6,7 +6,6 @@ sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 yum -y install scl-utils
 yum -y install centos-release-SCL
 yum -y install epel-release
-yum -y install ius-release
 
 # Install the base development tools
 yum -y update kernel
