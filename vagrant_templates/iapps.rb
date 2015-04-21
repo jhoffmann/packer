@@ -31,5 +31,8 @@ Vagrant.configure('2') do |config|
     override.ssh.username = "vagrant"
     vb.customize ["modifyvm", :id, "--memory", "#{1024*1}"]
     vb.customize ["modifyvm", :id, "--cpus",  "1"]
+
+    # Network
+    override.vm.network "private_network", type: "dhcp"
   end
 end
