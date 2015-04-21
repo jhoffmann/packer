@@ -73,6 +73,14 @@
     },
     {
       "type": "shell",
+      "only": ["amazon-ebs"],
+      "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
+      "scripts": [
+        "scripts/vagrant_aws.sh"
+      ]
+    },
+    {
+      "type": "shell",
       "only": ["virtualbox-iso"],
       "execute_command": "echo 'vagrant'|sudo -S sh '{{.Path}}'",
       "scripts": [

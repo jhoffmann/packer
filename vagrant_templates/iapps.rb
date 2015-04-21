@@ -18,7 +18,11 @@ Vagrant.configure('2') do |config|
     aws.security_groups = ["sandbox"]
     aws.terminate_on_shutdown = true
 
-    override.ssh.username = "root"
+    override.ssh.username = "vagrant"
+    aws.tags = {
+      'Name' => 'iApps Dev Sandbox',
+      'vagrant-dev' => 'sandbox'
+    }
   end
 
   config.vm.provider :virtualbox do |vb, override|
