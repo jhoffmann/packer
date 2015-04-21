@@ -2,8 +2,6 @@
 # vi: set ft=ruby :
 
 Vagrant.configure('2') do |config|
-  config.ssh.username = 'vagrant'
-  config.ssh.password = 'vagrant'
   config.ssh.insert_key = 'true'
   config.ssh.forward_agent = true
 
@@ -29,6 +27,7 @@ Vagrant.configure('2') do |config|
     vb.name = 'iapps-dev'
 
     override.ssh.username = "vagrant"
+    override.ssh.password = 'vagrant'
     vb.customize ["modifyvm", :id, "--memory", "#{1024*1}"]
     vb.customize ["modifyvm", :id, "--cpus",  "1"]
 
