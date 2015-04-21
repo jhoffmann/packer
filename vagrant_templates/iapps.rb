@@ -8,10 +8,16 @@ Vagrant.configure('2') do |config|
   config.ssh.forward_agent = true
 
   config.vm.provider :aws do |aws, override|
+    aws.region = "us-west-1"
+    aws.instance_type = "t2.micro"
+
     aws.region_config "us-west-1" do |region|
       region.keypair_name = "iapps-dev"
     end
-    aws.security_groups = "sg-5fb1013a"
+
+    aws.security_groups = ["sandbox"]
+    aws.terminate_on_shutdown = true
+
     override.ssh.username = "root"
   end
 
