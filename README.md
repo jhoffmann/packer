@@ -86,8 +86,7 @@ $ sudo chef-solo --no-color -c solo.rb -j node.json
 #### Testing
 After the build is finished, you should test it locally before uploading it to Amazon.
 ```
-$ vagrant box remove iapps-vb
-$ vagrant box add iapps-vb boxes/virtualbox/iapps_0.1.box
+$ vagrant box add -f -c iapps-vb boxes/virtualbox/iapps_0.2.box
 $ vagrant up
 ```
 
