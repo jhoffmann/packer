@@ -43,13 +43,20 @@ You want to run this from a directory near your other iApps repos.  So for examp
 $ cd ~/src
 $ mkdir packer; cd packer
 $ wget https://gist.githubusercontent.com/jhoffmann/8420473db2148c0c7ba7/raw/Vagrantfile
+$ export VAGRANT_DEFAULT_PROVIDER="virtualbox"   # This tells it not to use the EC2 config.
+
 $ vagrant plugin install landrush
+$ vagrant plugin install vagrant-s3auth
+$ vagrant plugin install copy_my_conf            # Optional, but handy.  See the hint below.
+
 $ vagrant up
 ```
 
 The reason for this, is that we'll mount `..` to `/var/www/htdocs` inside the virtual machine, which means all of our locally checked out code now becomes the docroot's for our various Apache virtual hosts.
 
 If everything works, you should be able to visit http://si.dev.vm in your browser!
+
+Hint: if you `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`, and `vagrant plugin install copy_my_conf`, you'll be able to `ssh vagrant@dev.vm` without needing a password.
 
 ## Development
 
@@ -79,8 +86,8 @@ $ sudo chef-solo --no-color -c solo.rb -j node.json
 #### Testing
 After the build is finished, you should test it locally before uploading it to Amazon.
 ```
-$ vagrant box remove iapps
-$ vagrant box add iapps boxes/virtualbox/iapps_0.1.box
+$ vagrant box remove iapps-vb
+$ vagrant box add iapps-vb boxes/virtualbox/iapps_0.1.box
 $ vagrant up
 ```
 
