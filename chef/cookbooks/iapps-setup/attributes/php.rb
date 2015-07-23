@@ -9,7 +9,7 @@ default['php']['directives']['session.save_handler'] = 'memcached'
 default['php']['directives']['error_log']            = "#{node['apache']['docroot_dir']}/php_errors.log"
 
 # These are the suggested values for running Sugar7
-default['php']['directives']['memory_limit']         = '256M'
+default['php']['directives']['memory_limit']         = '512M'
 default['php']['directives']['post_max_size']        = '50M'
 default['php']['directives']['upload_max_filesize']  = '50M'
 
