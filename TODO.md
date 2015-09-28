@@ -1,7 +1,7 @@
 ## TODO
 #### ALL
 - cron.php inside the vm
-- checkout iAppsUtlitityScripts, link cache/dibs to usr/local/bin
+- checkout iAppsUtilityScripts, link cache/dibs to usr/local/bin
 - export CDPATH
 - Figure out how to run the iapps-setup::post recipe by the end-user with a config.yaml for things like DB host, etc.
 
