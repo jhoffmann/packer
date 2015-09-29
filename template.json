@@ -6,7 +6,7 @@
     "iso_path": "iso",
     "iso_url": "http://archive.kernel.org/centos-vault/6.5/isos/x86_64/CentOS-6.5-x86_64-minimal.iso",
     "update": "true",
-    "version": "0.2",
+    "version": "0.3",
     "tld": "dev.vm",
     "aws_access_key": "",
     "aws_secret_key": ""
